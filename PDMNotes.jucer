@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="C6I5nK" name="PDMNotes" projectType="guiapp" useAppConfig="0"
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+  <MAINGROUP id="wb7YS8" name="PDMNotes">
+    <GROUP id="{10CD9969-46A3-0885-8FE7-6245BC74DC2D}" name="Source">
+      <FILE id="VfpKuL" name="Ball.cpp" compile="1" resource="0" file="Source/Ball.cpp"/>
+      <FILE id="daGSSh" name="Ball.h" compile="0" resource="0" file="Source/Ball.h"/>
+      <FILE id="Nf6CAo" name="NotesList.cpp" compile="1" resource="0" file="Source/NotesList.cpp"/>
+      <FILE id="sCwjp0" name="NotesList.h" compile="0" resource="0" file="Source/NotesList.h"/>
+      <FILE id="NZl9fu" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="q2TsRb" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="yUEDUu" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+    </GROUP>
+    <FILE id="EjoFJe" name="NotesSubtree.cpp" compile="1" resource="0"
+          file="Source/NotesSubtree.cpp"/>
+    <FILE id="ImUVy0" name="NotesSubtree.h" compile="0" resource="0" file="Source/NotesSubtree.h"/>
+  </MAINGROUP>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+  <EXPORTFORMATS>
+    <VS2022 targetFolder="Builds/VisualStudio2022">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug" targetName="PDMNotes"/>
+        <CONFIGURATION isDebug="0" name="Release" targetName="PDMNotes"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_box2d" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../../../Downloads/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="../../../../../Downloads/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2022>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_box2d" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+</JUCERPROJECT>
