@@ -4,6 +4,8 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="wb7YS8" name="PDMNotes">
     <GROUP id="{10CD9969-46A3-0885-8FE7-6245BC74DC2D}" name="Source">
+      <FILE id="sRoxbF" name="NotesEditor.cpp" compile="1" resource="0" file="Source/NotesEditor.cpp"/>
+      <FILE id="RFXBcM" name="NotesEditor.h" compile="0" resource="0" file="Source/NotesEditor.h"/>
       <FILE id="VfpKuL" name="Ball.cpp" compile="1" resource="0" file="Source/Ball.cpp"/>
       <FILE id="daGSSh" name="Ball.h" compile="0" resource="0" file="Source/Ball.h"/>
       <FILE id="Nf6CAo" name="NotesList.cpp" compile="1" resource="0" file="Source/NotesList.cpp"/>

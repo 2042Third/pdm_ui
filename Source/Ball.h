@@ -27,8 +27,8 @@ public:
     void mouseExit(const juce::MouseEvent& event) override;
     float pos_x{ 10 };
     float pos_y{ 20 };
-    float speed_x{ 8 };
-    float speed_y{ 8 };
+    float speed_x{ 2 };
+    float speed_y{ 0 };
     float size{ 20 };
 
 private:
