@@ -26,6 +26,10 @@ MainComponent::MainComponent()
     addKeyListener(commandManager.getKeyMappings());
     setWantsKeyboardFocus(true);
 
+    menuComponent->setVisible(1);
+    menuItemsChanged();
+
+
     // Timer
     Timer::startTimerHz(60);
     setSize(600, 400);
@@ -35,20 +39,19 @@ MainComponent::~MainComponent()
 {
     note_list = nullptr;
     note_editor = nullptr;
-    //menu = nullptr;
+    menuComponent = nullptr;
 }
 
 
 void MainComponent::resized()
 {
 
-    top_cord = getLookAndFeel().getDefaultMenuBarHeight();
+    top_cord = juce::LookAndFeel::getDefaultLookAndFeel().getDefaultMenuBarHeight();
     auto b = getLocalBounds();
     ball.setBounds(0, top_cord + (0.9 * getHeight()), middle_cord, (0.1 * getHeight()));
     note_list->setBounds(0, top_cord, middle_cord, getHeight() - (0.1 * getHeight()));
     note_editor->setBounds(middle_cord, top_cord, getWidth() - middle_cord, getHeight());
-    //menuComponent->setBounds(b.removeFromTop(top_cord));
-    menuComponent->setBounds(b);
+    menuComponent->setBounds(b.removeFromTop(top_cord));
 }
 
 void MainComponent::timerCallback() {
@@ -73,6 +76,7 @@ void MainComponent::mouseEnter(const juce::MouseEvent& event)
         + " x " + juce::String(event.getScreenPosition().getX());
     this->is_in_tree = 1;
 }
+
 void MainComponent::mouseExit(const juce::MouseEvent& event)
 {
     this->is_in_tree = 0;

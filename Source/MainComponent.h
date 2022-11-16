@@ -46,6 +46,7 @@ public:
     enum CommandIDs
     {
         newProject = 1,
+        menuPositionInsideWindow,
         openProject,
         saveProject,
         importFile,
@@ -98,6 +99,7 @@ public:
     {
         juce::Array<juce::CommandID> commands
         {
+            CommandIDs::menuPositionInsideWindow,
             CommandIDs::newProject,
             CommandIDs::openProject,
             CommandIDs::saveProject,
@@ -115,6 +117,11 @@ public:
     {
         switch (commandID)
         {
+        case CommandIDs::menuPositionInsideWindow:
+            result.setInfo("Inside Window", "Places the menu bar inside the application window", "Menu", 0);
+            result.setTicked(1);
+            result.addDefaultKeypress('w', juce::ModifierKeys::shiftModifier);
+            break;
         case CommandIDs::newProject:
             result.setInfo("New", "TODO", "File", 0);
             result.addDefaultKeypress('n', juce::ModifierKeys::ctrlModifier);
@@ -147,16 +154,23 @@ public:
             result.setInfo("Option 1", "TODO", "Align", 0);
             result.addDefaultKeypress('g', juce::ModifierKeys::ctrlModifier);
             break;
-        case CommandIDs::option2:
+        /*case CommandIDs::option2:
             result.setInfo("Option 2", "TODO", "Align", 0);
             result.addDefaultKeypress('w', juce::ModifierKeys::ctrlModifier);
-            break;
+            break;*/
         }
     }
 
-    bool perform(const InvocationInfo&) override
+    bool perform(const InvocationInfo& info) override
     {
-        // todo: make commands perform actions
+        switch (info.commandID)
+        {
+        case CommandIDs::menuPositionInsideWindow:
+            menuComponent->setVisible(1);
+            menuItemsChanged();
+            resized();
+            break;
+        }
         return true;
     }
 };

@@ -34,6 +34,7 @@ NotesSubtree::NotesSubtree ()
 
     juce__label.reset (new juce::Label ("new label",
                                         TRANS("label text")));
+    addAndMakeVisible (juce__label.get());
     juce__label->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
     juce__label->setJustificationType (juce::Justification::centredLeft);
     juce__label->setEditable (false, false, false);
@@ -41,7 +42,6 @@ NotesSubtree::NotesSubtree ()
     juce__label->setColour (juce::TextEditor::textColourId, juce::Colours::black);
     juce__label->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
-    addAndMakeVisible(juce__label.get());
     juce__label->setBounds (8, 8, 150, 24);
 
 
