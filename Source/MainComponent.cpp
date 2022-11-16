@@ -51,7 +51,7 @@ void MainComponent::resized()
     ball.setBounds(0, top_cord + (0.9 * getHeight()), middle_cord, (0.1 * getHeight()));
     note_list->setBounds(0, top_cord, middle_cord, getHeight() - (0.1 * getHeight()));
     note_editor->setBounds(middle_cord, top_cord, getWidth() - middle_cord, getHeight());
-    menuComponent->setBounds(b.removeFromTop(top_cord));
+    menuComponent->setBounds(b.removeFromTop(juce::LookAndFeel::getDefaultLookAndFeel().getDefaultMenuBarHeight()));
 }
 
 void MainComponent::timerCallback() {

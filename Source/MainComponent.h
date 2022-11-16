@@ -30,19 +30,6 @@ public:
     int top_cord = 20;
     int middle_cord = 300;
     int bar_height = 50;
-
-private:
-    juce::ApplicationCommandManager commandManager;
-    std::unique_ptr<juce::MenuBarComponent> menuComponent;
-    juce::String mousePosition = "000";
-    int is_in_tree = 0;
-
-    std::unique_ptr<NotesList> note_list;
-    std::unique_ptr<NotesEditor> note_editor;
-
-    juce::String currentSizeAsString = "none";
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
-public:
     enum CommandIDs
     {
         newProject = 1,
@@ -154,10 +141,9 @@ public:
             result.setInfo("Option 1", "TODO", "Align", 0);
             result.addDefaultKeypress('g', juce::ModifierKeys::ctrlModifier);
             break;
-        /*case CommandIDs::option2:
+        case CommandIDs::option2:
             result.setInfo("Option 2", "TODO", "Align", 0);
-            result.addDefaultKeypress('w', juce::ModifierKeys::ctrlModifier);
-            break;*/
+            break;
         }
     }
 
@@ -167,10 +153,23 @@ public:
         {
         case CommandIDs::menuPositionInsideWindow:
             menuComponent->setVisible(1);
+            DBG("Got action\n");
             menuItemsChanged();
             resized();
             break;
         }
         return true;
     }
+private:
+    juce::ApplicationCommandManager commandManager;
+    std::unique_ptr<juce::MenuBarComponent> menuComponent;
+    juce::String mousePosition = "000";
+    int is_in_tree = 0;
+
+    std::unique_ptr<NotesList> note_list;
+    std::unique_ptr<NotesEditor> note_editor;
+
+    juce::String currentSizeAsString = "none";
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
+
 };
