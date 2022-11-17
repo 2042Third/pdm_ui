@@ -35,19 +35,13 @@
         <MODULEPATH id="juce_video" path="../../../../../Downloads/JUCE/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../../../../Downloads/JUCE/modules"/>
         <MODULEPATH id="juce_box2d" path="../../../../../Downloads/JUCE/modules"/>
-        <MODULEPATH id="juce_dsp" path="../../../../../Downloads/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../../../Downloads/JUCE/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="../../../../../Downloads/JUCE/modules"/>
       </MODULEPATHS>
     </VS2022>
   </EXPORTFORMATS>
   <MODULES>
-    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_box2d" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>

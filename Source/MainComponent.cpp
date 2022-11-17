@@ -10,15 +10,10 @@ MainComponent::MainComponent()
 
     // Sizes
     top_cord = 20;
-    note_list->setBounds(0, top_cord, middle_cord, getHeight() - top_cord);
-    note_editor->setBounds(middle_cord,top_cord,getWidth()-middle_cord, getHeight()-top_cord);
-    menuComponent->setBounds(getLocalBounds().removeFromTop(juce::LookAndFeel::getDefaultLookAndFeel().getDefaultMenuBarHeight()));
+    //note_list->setBounds(0, top_cord, middle_cord, getHeight() - top_cord);
+    //note_editor->setBounds(middle_cord,top_cord,getWidth()-middle_cord, getHeight()-top_cord);
+    //menuComponent->setBounds(getLocalBounds().removeFromTop(juce::LookAndFeel::getDefaultLookAndFeel().getDefaultMenuBarHeight()));
 
-    // Visibles
-    addAndMakeVisible(ball);
-    addAndMakeVisible(note_list.get());
-    addAndMakeVisible(note_editor.get());
-    addAndMakeVisible(menuComponent.get());
     
     // Settingss
     setApplicationCommandManagerToWatch(&commandManager);
@@ -26,6 +21,13 @@ MainComponent::MainComponent()
     commandManager.setFirstCommandTarget(this);
     addKeyListener(commandManager.getKeyMappings());
     setWantsKeyboardFocus(true);
+
+
+    // Visibles
+    addAndMakeVisible(ball);
+    addAndMakeVisible(note_list.get());
+    addAndMakeVisible(note_editor.get());
+    addAndMakeVisible(menuComponent.get());
 
     menuComponent->setVisible(1);
     menuItemsChanged();
