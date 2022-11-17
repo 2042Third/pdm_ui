@@ -5,14 +5,16 @@ MainComponent::MainComponent()
 {
     // Initializations
     note_list.reset(new NotesList());
-    menuComponent.reset(new juce::MenuBarComponent());
+    menuComponent.reset(new juce::MenuBarComponent(this));
     note_editor.reset(new NotesEditor( ));
 
+    // Visibles
+    addAndMakeVisible(ball);
+    addAndMakeVisible(note_list.get());
+    addAndMakeVisible(note_editor.get());
+    addAndMakeVisible(menuComponent.get());
     // Sizes
     top_cord = 20;
-    //note_list->setBounds(0, top_cord, middle_cord, getHeight() - top_cord);
-    //note_editor->setBounds(middle_cord,top_cord,getWidth()-middle_cord, getHeight()-top_cord);
-    //menuComponent->setBounds(getLocalBounds().removeFromTop(juce::LookAndFeel::getDefaultLookAndFeel().getDefaultMenuBarHeight()));
 
     
     // Settingss
@@ -23,11 +25,6 @@ MainComponent::MainComponent()
     setWantsKeyboardFocus(true);
 
 
-    // Visibles
-    addAndMakeVisible(ball);
-    addAndMakeVisible(note_list.get());
-    addAndMakeVisible(note_editor.get());
-    addAndMakeVisible(menuComponent.get());
 
     menuComponent->setVisible(1);
     menuItemsChanged();

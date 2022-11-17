@@ -16,6 +16,20 @@ class MainComponent  : public juce::Component,
     public juce::MenuBarModel
 {
 public:
+
+    enum CommandIDs
+    {
+        newProject = 1,
+        menuPositionInsideWindow,
+        openProject,
+        saveProject,
+        importFile,
+        exportFile,
+        undo,
+        redo,
+        option1,
+        option2
+    };
     //==============================================================================
     MainComponent();
     ~MainComponent() override;
@@ -30,19 +44,6 @@ public:
     int top_cord = 20;
     int middle_cord = 300;
     int bar_height = 50;
-    enum CommandIDs
-    {
-        newProject = 1,
-        menuPositionInsideWindow,
-        openProject,
-        saveProject,
-        importFile,
-        exportFile,
-        undo,
-        redo,
-        option1,
-        option2
-    };
 
     juce::StringArray getMenuBarNames() override
     {
@@ -55,6 +56,7 @@ public:
 
         if (menuIndex == 0)
         {
+            menu.addCommandItem(&commandManager, CommandIDs::menuPositionInsideWindow);
             menu.addCommandItem(&commandManager, CommandIDs::newProject);
             menu.addCommandItem(&commandManager, CommandIDs::openProject);
             menu.addCommandItem(&commandManager, CommandIDs::saveProject);
@@ -79,7 +81,7 @@ public:
 
     juce::ApplicationCommandTarget* getNextCommandTarget() override
     {
-        return this; // findFirstTargetParentComponent()
+        return nullptr; // findFirstTargetParentComponent()
     }
 
     void getAllCommands(juce::Array<juce::CommandID>& c) override
@@ -163,6 +165,7 @@ public:
 private:
     juce::ApplicationCommandManager commandManager;
     std::unique_ptr<juce::MenuBarComponent> menuComponent;
+
     juce::String mousePosition = "000";
     int is_in_tree = 0;
 
