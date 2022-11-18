@@ -5,6 +5,7 @@
   <MAINGROUP id="wb7YS8" name="PDMNotes">
     <GROUP id="{10CD9969-46A3-0885-8FE7-6245BC74DC2D}" name="Source">
       <GROUP id="{E339A26A-7D88-6835-A374-DD20AD078F81}" name="subWindow">
+        <FILE id="VfIour" name="AnimatedCurve.h" compile="0" resource="0" file="Source/AnimatedCurve.h"/>
         <FILE id="sv82WU" name="UserWindow.cpp" compile="1" resource="0" file="Source/UserWindow.cpp"/>
         <FILE id="NoVwDU" name="UserWindow.h" compile="0" resource="0" file="Source/UserWindow.h"/>
         <FILE id="EzAY0V" name="AccountWindow.cpp" compile="1" resource="0"

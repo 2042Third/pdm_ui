@@ -31,7 +31,9 @@ public:
     float speed_y{ 0 };
     float size{ 20 };
 
+
 private:
+
     int is_in_tree = 0;
     juce::String mousePosition = "000";
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Ball)
