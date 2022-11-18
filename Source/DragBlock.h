@@ -34,6 +34,8 @@ public:
     void mouseUp(const juce::MouseEvent& event) override {
         x += x_off;
         y += y_off;
+        x_off = 0;
+        y_off = 0;
     }
     
     float getH() { return sizey; }
