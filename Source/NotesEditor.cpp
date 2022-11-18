@@ -16,12 +16,19 @@ NotesEditor::NotesEditor()
 {
     // Initilization
     editor.reset(new juce::TextEditor());
+    block.reset(new DragBlock());
+    
+
 
     // Size
     editor->setBounds(0, 0, getWidth() , getHeight());
 
     // Visibles 
     addAndMakeVisible(editor.get());
+    addAndMakeVisible(block.get());
+
+    block->addMouseListener(this,1);
+
 
     // Specifications
     editor->setTooltip(TRANS("a small text editor\n"));
@@ -36,22 +43,19 @@ NotesEditor::NotesEditor()
     editor->setColour(juce::TextEditor::outlineColourId, juce::Colour(0xd1000000));
     editor->setColour(juce::TextEditor::shadowColourId, juce::Colour(0x8f393535));
     editor->setText(juce::String());
+
+
+
 }
 
 NotesEditor::~NotesEditor()
 {
     editor = nullptr;
+    block = nullptr;
 }
 
 void NotesEditor::paint (juce::Graphics& g)
 {
-    /* This demo code just fills the component's background and
-       draws some placeholder text to get you started.
-
-       You should replace everything in this method with your own
-       drawing code..
-    */
-
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));   // clear the background
 
     g.setColour (juce::Colours::grey);
@@ -61,10 +65,20 @@ void NotesEditor::paint (juce::Graphics& g)
     g.setFont (14.0f);
     g.drawText ("NotesEditor", getLocalBounds(),
                 juce::Justification::centred, true);   // draw some placeholder text
+
+    block->repaint();
+
 }
 
 void NotesEditor::resized()
 {
     editor->setBounds(0, 0, getWidth(), getHeight());
+    block->setBounds(block->x, block->y, block->getW(), block->getH());
+}
 
+void NotesEditor::mouseDrag(const juce::MouseEvent& event) {
+    block->x_off = event.getDistanceFromDragStartX();
+    block->y_off = event.getDistanceFromDragStartY();
+    block->setBounds(block->x+ block->x_off, block->y+ block->y_off, block->getW(), block->getH());
+    block->repaint();
 }

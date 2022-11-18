@@ -1,3 +1,8 @@
+/**
+
+  Created by : Mike Yang
+*/
+
 #pragma once
 
 #include <JuceHeader.h>

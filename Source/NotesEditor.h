@@ -3,7 +3,7 @@
 
     NotesEditor.h
     Created: 13 Nov 2022 4:47:54pm
-    Author:  18604
+    Author:  Mike Yang
 
   ==============================================================================
 */
@@ -11,6 +11,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "DragBlock.h"
 
 //==============================================================================
 /*
@@ -23,10 +24,11 @@ public:
 
     void paint (juce::Graphics&) override;
     void resized() override;
-
+    void mouseDrag(const juce::MouseEvent& event) override;
 
 private:
 
     std::unique_ptr<juce::TextEditor> editor;
+    std::unique_ptr<DragBlock> block;
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (NotesEditor)
 };
