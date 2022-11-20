@@ -53,15 +53,16 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
+    juce::Path path_pass_visible;
     //[/UserVariables]
 
     //==============================================================================
-    std::unique_ptr<juce::GroupComponent> email_group;
     std::unique_ptr<juce::TextEditor> email_input;
-    std::unique_ptr<juce::GroupComponent> pass_group;
+    std::unique_ptr<juce::GroupComponent> email_group;
+    std::unique_ptr<juce::ShapeButton> button_pass_visible;
     std::unique_ptr<juce::TextEditor> pass_input;
     std::unique_ptr<juce::TextButton> login_button;
-    std::unique_ptr<juce::ImageButton> juce__imageButton;
+    std::unique_ptr<juce::GroupComponent> pass_group;
 
 
     //==============================================================================

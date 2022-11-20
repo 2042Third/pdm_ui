@@ -13,7 +13,7 @@
 
 AccountWindow::AccountWindow()
 {
-    dx_slider.reset(new juce::Slider("dx"));
+    /*dx_slider.reset(new juce::Slider("dx"));
     addAndMakeVisible(dx_slider.get());
     dx_slider->setRange(0, 40, 1);
     dx_slider->setSliderStyle(juce::Slider::LinearHorizontal);
@@ -52,7 +52,10 @@ AccountWindow::AccountWindow()
     dy_slider->setRange(0, 40, 1);
 
     Timer::startTimerHz(60);
-    setSize(1000, 1000);
+    setSize(1000, 1000);*/
+    log_input.reset(new LogInputs());
+    addAndMakeVisible(log_input.get());
+    setSize(600, 400);
 }
 
 AccountWindow::~AccountWindow()
@@ -67,50 +70,50 @@ void AccountWindow::paint(juce::Graphics& g)
 
 void AccountWindow::resized()
 {
-
-    curve->setBounds(0, slider_offset, getWidth(), getHeight() - slider_offset);
+    log_input->setBounds(0,0,getWidth(),getHeight());
+    //curve->setBounds(0, slider_offset, getWidth(), getHeight() - slider_offset);
 }
 
 
-void AccountWindow::drawing(juce::Graphics& g) {
-    juce::Path p;
-
-    g.strokePath(p, juce::PathStrokeType(5.0f));
-}
-
-void AccountWindow::timerCallback()
-{
-
-    if (curve->x < 0 || curve->x > getWidth()) {
-        curve->xm *= -1;
-    }
-    curve->dx += curve->ax * curve->xm;
-    curve->x += curve->dx * curve->xm;
-    dx_slider->setValue(curve->dx);
-
-    if (curve->y < 0 || curve->y > getHeight()-slider_offset) {
-        curve->ym *= -1;
-    }
-    curve->dy += curve->ay * curve->ym;
-    curve->y += curve->dy*curve->ym;
-    dy_slider->setValue(curve->dy);
-
-    curve->repaint();
-}
-
-void AccountWindow::sliderValueChanged(juce::Slider* sliderThatWasMoved)
-{
-    /*if (sliderThatWasMoved == dx_slider.get()){
-        curve->dx = dx_slider->getValue();
-    }
-    else if (sliderThatWasMoved == dy_slider.get()) {
-        curve->dy = dy_slider->getValue();
-    }
-    else */
-    if (sliderThatWasMoved == ax_slider.get()) {
-        curve->ax = ax_slider->getValue();
-    }
-    else if (sliderThatWasMoved == ay_slider.get()) {
-        curve->ay = ay_slider->getValue();
-    }
-}
+//void AccountWindow::drawing(juce::Graphics& g) {
+//    juce::Path p;
+//
+//    g.strokePath(p, juce::PathStrokeType(5.0f));
+//}
+//
+//void AccountWindow::timerCallback()
+//{
+//
+//    if (curve->x < 0 || curve->x > getWidth()) {
+//        curve->xm *= -1;
+//    }
+//    curve->dx += curve->ax * curve->xm;
+//    curve->x += curve->dx * curve->xm;
+//    dx_slider->setValue(curve->dx);
+//
+//    if (curve->y < 0 || curve->y > getHeight()-slider_offset) {
+//        curve->ym *= -1;
+//    }
+//    curve->dy += curve->ay * curve->ym;
+//    curve->y += curve->dy*curve->ym;
+//    dy_slider->setValue(curve->dy);
+//
+//    curve->repaint();
+//}
+//
+//void AccountWindow::sliderValueChanged(juce::Slider* sliderThatWasMoved)
+//{
+//    /*if (sliderThatWasMoved == dx_slider.get()){
+//        curve->dx = dx_slider->getValue();
+//    }
+//    else if (sliderThatWasMoved == dy_slider.get()) {
+//        curve->dy = dy_slider->getValue();
+//    }
+//    else */
+//    if (sliderThatWasMoved == ax_slider.get()) {
+//        curve->ax = ax_slider->getValue();
+//    }
+//    else if (sliderThatWasMoved == ay_slider.get()) {
+//        curve->ay = ay_slider->getValue();
+//    }
+//}

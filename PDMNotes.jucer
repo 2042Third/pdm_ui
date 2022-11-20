@@ -4,8 +4,22 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
   <MAINGROUP id="wb7YS8" name="PDMNotes">
     <GROUP id="{10CD9969-46A3-0885-8FE7-6245BC74DC2D}" name="Source">
-      <GROUP id="{E339A26A-7D88-6835-A374-DD20AD078F81}" name="subWindow">
+      <GROUP id="{9DF590C4-6C10-9724-ED0B-DF65B7F12C6B}" name="button">
+        <FILE id="njYrNJ" name="ButtonIcon.h" compile="0" resource="0" file="Source/ButtonIcon.h"/>
+        <FILE id="F3GX0h" name="Icons.h" compile="0" resource="0" file="Source/Icons.h"/>
+      </GROUP>
+      <GROUP id="{038EDF37-E406-A329-6618-2F9D7DEFF773}" name="components">
+        <FILE id="sRoxbF" name="NotesEditor.cpp" compile="1" resource="0" file="Source/NotesEditor.cpp"/>
+        <FILE id="My2LMX" name="LogInputs.h" compile="0" resource="0" file="Source/LogInputs.h"/>
+        <FILE id="zr36QP" name="LogInputs.cpp" compile="1" resource="0" file="Source/LogInputs.cpp"/>
         <FILE id="iBIAE1" name="DragBlock.h" compile="0" resource="0" file="Source/DragBlock.h"/>
+        <FILE id="RFXBcM" name="NotesEditor.h" compile="0" resource="0" file="Source/NotesEditor.h"/>
+        <FILE id="Nf6CAo" name="NotesList.cpp" compile="1" resource="0" file="Source/NotesList.cpp"/>
+        <FILE id="sCwjp0" name="NotesList.h" compile="0" resource="0" file="Source/NotesList.h"/>
+        <FILE id="VfpKuL" name="Ball.cpp" compile="1" resource="0" file="Source/Ball.cpp"/>
+        <FILE id="daGSSh" name="Ball.h" compile="0" resource="0" file="Source/Ball.h"/>
+      </GROUP>
+      <GROUP id="{E339A26A-7D88-6835-A374-DD20AD078F81}" name="subWindow">
         <FILE id="VfIour" name="AnimatedCurve.h" compile="0" resource="0" file="Source/AnimatedCurve.h"/>
         <FILE id="sv82WU" name="UserWindow.cpp" compile="1" resource="0" file="Source/UserWindow.cpp"/>
         <FILE id="NoVwDU" name="UserWindow.h" compile="0" resource="0" file="Source/UserWindow.h"/>
@@ -13,12 +27,6 @@
               file="Source/AccountWindow.cpp"/>
         <FILE id="luwsgs" name="AccountWindow.h" compile="0" resource="0" file="Source/AccountWindow.h"/>
       </GROUP>
-      <FILE id="sRoxbF" name="NotesEditor.cpp" compile="1" resource="0" file="Source/NotesEditor.cpp"/>
-      <FILE id="RFXBcM" name="NotesEditor.h" compile="0" resource="0" file="Source/NotesEditor.h"/>
-      <FILE id="VfpKuL" name="Ball.cpp" compile="1" resource="0" file="Source/Ball.cpp"/>
-      <FILE id="daGSSh" name="Ball.h" compile="0" resource="0" file="Source/Ball.h"/>
-      <FILE id="Nf6CAo" name="NotesList.cpp" compile="1" resource="0" file="Source/NotesList.cpp"/>
-      <FILE id="sCwjp0" name="NotesList.h" compile="0" resource="0" file="Source/NotesList.h"/>
       <FILE id="NZl9fu" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="q2TsRb" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="yUEDUu" name="MainComponent.cpp" compile="1" resource="0"
